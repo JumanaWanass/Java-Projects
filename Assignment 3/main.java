@@ -12,7 +12,6 @@ public class main
         Biblotheca.insertRecord(book);
         Biblotheca.insertRecord(book2);
         Biblotheca.insertRecord(book);
-        Biblotheca.insertRecord(book);
         Biblotheca.saveToFile();
         
         System.out.println("----------------------------------------------------------------");   

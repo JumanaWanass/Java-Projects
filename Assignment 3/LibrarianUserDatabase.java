@@ -15,17 +15,7 @@ public class LibrarianUserDatabase
     public LibrarianUserDatabase(String filename)   // Class constructor
      {
         this.filename = filename;
-        /*try {
-            File file = new File(this.filename + ".txt");
-            FileWriter myWriter = new FileWriter(this.filename + ".txt");
-            file.createNewFile();
-            
-            myWriter.write(this.getLibrarianId() + ',' + this.getName() + ',' + this.getEmail() + ',' + this.getAddress() + ',' + this.getPhoneNumber());
-            myWriter.close();
-          } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-          }*/
+  
     }
 
     /*Function reads file and prints all of its contents. It also appends the librarian user to the
@@ -34,27 +24,21 @@ public class LibrarianUserDatabase
     public void readFromFile() 
     {
         try{
-            File file = new File(filename);
-            String line = null;
-            Scanner sc = new Scanner(file);
-            
-            while(sc.hasNextLine())
-            {
-              line = sc.nextLine();
-              System.out.println(line);
-              LibrarianUser user = createRecordFrom(line);
-              int counter = 0;
-              for(LibrarianUser x :records){
-                if(x.getLibrarianId().equals(user.getLibrarianId()))
-                  counter++;
+              File file = new File(filename);
+              String line = null;
+              Scanner sc = new Scanner(file);
+              
+              while(sc.hasNextLine())
+              {
+                line = sc.nextLine();
+                System.out.println(line);
+                LibrarianUser user = createRecordFrom(line);
+                insertRecord(user);  
               }
-              if(counter == 0){
-                records.add(user);
-              }
+              sc.close(); 
               
             } 
-            sc.close();
-        } 
+      
         catch(FileNotFoundException e)
         {
             System.out.println("File not found");
@@ -81,7 +65,7 @@ public class LibrarianUserDatabase
     {
       for(LibrarianUser user:this.records)
       {
-        if(user.getLibrarianId().equals(key))
+        if(user.getSearchKey().equals(key))
           return true;       
       }
       return false;
@@ -93,7 +77,7 @@ public class LibrarianUserDatabase
     {
       for(LibrarianUser user:this.records)
       {
-        if(user.getLibrarianId().equals(key))
+        if(user.getSearchKey().equals(key))
           return user;
       }
       return null;
@@ -101,7 +85,12 @@ public class LibrarianUserDatabase
 
     public void insertRecord(LibrarianUser new_user)
     {
-      this.records.add(new_user);
+      if(contains(new_user.getSearchKey()))
+        System.out.println("Librarian already exists in reord with same ID. ");
+
+      else  
+        this.records.add(new_user);
+        
     }
 
     /*Searches for a record with given key and deletes object from list */
@@ -110,7 +99,7 @@ public class LibrarianUserDatabase
     {
       for(LibrarianUser user:this.records)
       {
-        if(user.getLibrarianId().equals(key))
+        if(user.getSearchKey().equals(key))
         {
             Boolean flag = this.records.remove(user);
             if (flag)

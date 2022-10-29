@@ -15,11 +15,6 @@ public class LibrarianUser
             this.PhoneNumber = phoneNumber;
         }
         
-        public String getLibrarianId()
-        {
-            return librarianId;
-        }
-
         public void setLibrarianId(String librarianId) 
         {
             this.librarianId = librarianId;
@@ -76,7 +71,3 @@ public class LibrarianUser
         }
        
 }
-        
-
- 
-

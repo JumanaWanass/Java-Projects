@@ -11,7 +11,7 @@ public class main
         Book book2 = new Book("P3","Pride and Evil", " Jane 7amada", "Publisher", 1);
         Biblotheca.insertRecord(book);
         Biblotheca.insertRecord(book2);
-        Biblotheca.insertRecord(book);
+        Biblotheca.insertRecord(book2);
         Biblotheca.saveToFile();
         
         System.out.println("----------------------------------------------------------------");   

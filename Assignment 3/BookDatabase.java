@@ -29,22 +29,16 @@ public class BookDatabase
               line = sc.nextLine();
               System.out.println(line);
               Book book = createRecordFrom(line);
-              int counter = 0;
-              for(Book x :records){
-                if(x.getSearchKey().equals(book.getSearchKey()))
-                  counter++;
-              }
-              if(counter == 0)
-              {
-                records.add(book);
-              }
+              insertRecord(book);
+            
             } 
             sc.close();
-        } 
+        }
         catch(FileNotFoundException e)
         {
             System.out.println("File not found");
         }
+       
     }
     
     /*Function recieves Librarian data comma separated and retruns a LibrarianUser object */
@@ -88,17 +82,13 @@ public class BookDatabase
 
     public void insertRecord(Book book)
     {
-      int i = 0;
-      for(Book x :records)
-      {
-        if(x.getSearchKey().equals(book.getSearchKey()))
-        {
-          book.setQuantity(book.getQuantity() + 1);
-          i++;
-        }
-      }
-      if (i == 0)
+
+      if(contains(book.getSearchKey()))
+        System.out.println("Book already exists in reord with same ID. ");
+
+      else  
         this.records.add(book);
+        
     }
     /*Searches for a record with given key and deletes object from list */
 
@@ -141,8 +131,5 @@ public class BookDatabase
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-    
-
-
     }
 }

@@ -4,8 +4,9 @@ public class main
 {
     public static void main(String[] args)
     {
-        Biblotheca.readFromFile();
+        
         BookDatabase Biblotheca = new BookDatabase("Books.txt");
+        Biblotheca.readFromFile();
         Book book = new Book("P2","Pride and prejudice", "Jane Austen", "Publisher",1);
         Book book2 = new Book("P3","Pride and Evil", " Jane 7amada", "Publisher", 1);
         Biblotheca.insertRecord(book);

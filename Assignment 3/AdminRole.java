@@ -21,19 +21,8 @@ public class AdminRole extends LibrarianUserDatabase
 
 //get an array of type LibrarianUser from all librarians in Librarians.txt file.
     public LibrarianUser[] getListOfLibrarians()
-    {
-        
-        ArrayList <LibrarianUser> list =  this.database.returnAllRecords();
-        LibrarianUser[] librarianArray = new LibrarianUser[100];
-        int i = 0;
-        for (LibrarianUser x: list){
-            librarianArray[i] = x;
-            i++;
-        }
-        return librarianArray;
-
-        
-
+    { 
+        return this.returnAllRecords().toArray(new LibrarianUser[0]);
     }
 
 //remove an librarian from the Librarians.txt file.
@@ -49,4 +38,5 @@ public class AdminRole extends LibrarianUserDatabase
         database.saveToFile();
     } 
         
+    
 }

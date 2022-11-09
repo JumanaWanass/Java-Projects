@@ -1,10 +1,14 @@
+package backend;
+import constants.FileNames;
+
 public class AdminRole 
 {
     private Database librarianDatabase; 
 
     public AdminRole()
     {
-        this.librarianDatabase = new LibrarianUserDatabase("Librarians.txt");
+        String fileName = FileNames.LIBRARIANS_FILENAME;
+        this.librarianDatabase = new LibrarianUserDatabase(fileName);
         this.librarianDatabase.readFromFile();
     }
 

@@ -1,5 +1,7 @@
+package backend;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import constants.FileNames;
 
 
 public class LibrarianRole 
@@ -9,8 +11,10 @@ public class LibrarianRole
 
      public LibrarianRole()
      {
-        this.sBDatabase = new StudentBookDatabase("StudentBooks.txt");
-        this.bookDatabase = new BookDatabase("Books.txt");
+        String fileName = FileNames.STUDENTSBOOKS_FILENAME;
+        this.sBDatabase = new StudentBookDatabase(fileName);
+        fileName = FileNames.BOOKS_FILENAME;
+        this.bookDatabase = new BookDatabase(fileName);
         this.sBDatabase.readFromFile();
         this.bookDatabase.readFromFile();
      }

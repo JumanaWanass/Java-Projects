@@ -15,7 +15,7 @@ public class circleInfo extends javax.swing.JFrame {
 
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jColorChooser1 = new javax.swing.JColorChooser();
@@ -34,6 +34,7 @@ public class circleInfo extends javax.swing.JFrame {
         radiusTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Circle Details");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Coordinates:");
@@ -157,31 +158,31 @@ public class circleInfo extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void xStartingTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xStartingTextFieldActionPerformed
+    private void xStartingTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                   
 
-    }//GEN-LAST:event_xStartingTextFieldActionPerformed
+    }                                                  
 
-    private void fillColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fillColorButtonActionPerformed
+    private void fillColorButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
         Color col = Color.BLUE;
         Color fillColor = jColorChooser1.showDialog(null, "Select a filling color", col);
 
-    }//GEN-LAST:event_fillColorButtonActionPerformed
+    }                                               
 
-    private void borderColorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borderColorButtonActionPerformed
+    private void borderColorButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         Color col = Color.BLUE;
         Color borderColor = jColorChooser1.showDialog(null, "Select a border color", col);
-    }//GEN-LAST:event_borderColorButtonActionPerformed
+    }                                                 
 
-    private void createLineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createLineButtonActionPerformed
+    private void createLineButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
         int startingX = Integer.parseInt(xStartingTextField.getText());
         int startingY = Integer.parseInt(yStartingTextField.getText());
         int radius = Integer.parseInt(radiusTextField.getText());
 
-    }//GEN-LAST:event_createLineButtonActionPerformed
+    }                                                
 
     /**
      * @param args the command line arguments
@@ -218,7 +219,7 @@ public class circleInfo extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton borderColorButton;
     private javax.swing.JButton createLineButton;
     private javax.swing.JButton fillColorButton;
@@ -233,5 +234,5 @@ public class circleInfo extends javax.swing.JFrame {
     private javax.swing.JTextField xStartingTextField;
     private javax.swing.JLabel yStartingLabel;
     private javax.swing.JTextField yStartingTextField;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

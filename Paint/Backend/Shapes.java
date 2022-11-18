@@ -1,14 +1,19 @@
+import com.mycompany.lab7_minipaint.DrawingFrame;
 import java.awt.*;
-import java.awt.Graphics;
+import javax.swing.JPanel;
+import javax.swing.*;
+import java.util.*;
+        
 public class Shapes implements Shape
 {
     private Point position;
     private Color color;
-
+    private ArrayList<Shape> allShapes ;
     public Shapes(Point position, Color color)
     {
         this.position = position;
         this.color = color;
+        allShapes = new ArrayList<Shape> ();
     }
 
     @Override
@@ -55,13 +60,16 @@ public class Shapes implements Shape
 }
 class lineSegment extends Shapes
 {
-    public lineSegment(Point position, Color color)
+    private Point endPosition;
+    public lineSegment(Point position, Color color, Point endPosition)
     {
         super(position, color);
+        this.endPosition = endPosition;
     }
     public void draw(Graphics canvas)
     {
-
+        canvas.drawLine(0, 0, 5, 5);
+        
     }
 
 }
